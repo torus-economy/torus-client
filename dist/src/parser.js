@@ -36,7 +36,7 @@ function getRpcResult(body, {
   response
 } = {}) {
   if (body.error !== null) {
-    throw new _rpcError.default(_lodash.default.get(body, 'error.code', -32603), _lodash.default.get(body, 'error.message', 'An error occurred while processing the RPC call to bitcoind'));
+    throw new _rpcError.default(_lodash.default.get(body, 'error.code', -32603), _lodash.default.get(body, 'error.message', 'An error occurred while processing the RPC call to torusd'));
   } // Defensive measure. This should not happen on a RPC call.
 
 

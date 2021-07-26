@@ -57,7 +57,7 @@ class Client {
     agentOptions,
     headers = false,
     host = 'localhost',
-    logger = (0, _debugnyan.default)('bitcoin-core'),
+    logger = (0, _debugnyan.default)('torus-client'),
     network = 'mainnet',
     password,
     port,
@@ -166,11 +166,11 @@ class Client {
       });
     }
 
-    return this.parser.rpc((await this.request.postAsync({
+    return this.parser.rpc(await this.request.postAsync({
       auth: _lodash.default.pickBy(this.auth, _lodash.default.identity),
       body: JSON.stringify(body),
       uri: `${multiwallet && this.wallet ? `/wallet/${this.wallet}` : '/'}`
-    })));
+    }));
   }
   /**
    * Given a transaction hash, returns a transaction in binary, hex-encoded binary, or JSON formats.
@@ -180,10 +180,10 @@ class Client {
   async getTransactionByHash(hash, {
     extension = 'json'
   } = {}) {
-    return this.parser.rest(extension, (await this.request.getAsync({
+    return this.parser.rest(extension, await this.request.getAsync({
       encoding: extension === 'bin' ? null : undefined,
       url: `/rest/tx/${hash}.${extension}`
-    })));
+    }));
   }
   /**
    * Given a block hash, returns a block, in binary, hex-encoded binary or JSON formats.
@@ -198,10 +198,10 @@ class Client {
   } = {}) {
     const encoding = extension === 'bin' ? null : undefined;
     const url = `/rest/block${summary ? '/notxdetails/' : '/'}${hash}.${extension}`;
-    return this.parser.rest(extension, (await this.request.getAsync({
+    return this.parser.rest(extension, await this.request.getAsync({
       encoding,
       url
-    })));
+    }));
   }
   /**
    * Given a block hash, returns amount of blockheaders in upward direction.
@@ -213,10 +213,10 @@ class Client {
   } = {}) {
     const encoding = extension === 'bin' ? null : undefined;
     const url = `/rest/headers/${count}/${hash}.${extension}`;
-    return this.parser.rest(extension, (await this.request.getAsync({
+    return this.parser.rest(extension, await this.request.getAsync({
       encoding,
       url
-    })));
+    }));
   }
   /**
    * Returns various state info regarding block chain processing.
@@ -225,7 +225,7 @@ class Client {
 
 
   async getBlockchainInformation() {
-    return this.parser.rest('json', (await this.request.getAsync(`/rest/chaininfo.json`)));
+    return this.parser.rest('json', await this.request.getAsync(`/rest/chaininfo.json`));
   }
   /**
    * Query unspent transaction outputs for a given set of outpoints.
@@ -244,10 +244,10 @@ class Client {
     }).join('/');
 
     const url = `/rest/getutxos/checkmempool/${sets}.${extension}`;
-    return this.parser.rest(extension, (await this.request.getAsync({
+    return this.parser.rest(extension, await this.request.getAsync({
       encoding,
       url
-    })));
+    }));
   }
   /**
    * Returns transactions in the transaction memory pool.
@@ -256,7 +256,7 @@ class Client {
 
 
   async getMemoryPoolContent() {
-    return this.parser.rest('json', (await this.request.getAsync('/rest/mempool/contents.json')));
+    return this.parser.rest('json', await this.request.getAsync('/rest/mempool/contents.json'));
   }
   /**
    * Returns various information about the transaction memory pool.
@@ -269,7 +269,7 @@ class Client {
 
 
   async getMemoryPoolInformation() {
-    return this.parser.rest('json', (await this.request.getAsync('/rest/mempool/info.json')));
+    return this.parser.rest('json', await this.request.getAsync('/rest/mempool/info.json'));
   }
 
 }
@@ -288,7 +288,7 @@ _lodash.default.forOwn(_methods.default, (options, method) => {
 
 var _default = Client;
 /**
- * Export Client class (CJS) for compatibility with require('bitcoin-core').
+ * Export Client class (CJS) for compatibility with require('torus-client').
  */
 
 exports.default = _default;

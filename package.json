@@ -1,61 +1,58 @@
 {
-  "name": "bitcoin-core",
-  "version": "3.0.0",
-  "description": "A modern Bitcoin Core REST and RPC client.",
+  "name": "torus-client",
+  "version": "1.0.0",
+  "description": "Torus REST and RPC client",
   "keywords": [
     "bitcoin",
     "bitcoind",
     "client",
     "request",
     "rest",
-    "rpc"
+    "rpc",
+    "torus",
+    "torus-cli",
+    "torusd",
+    "nodejs"
   ],
-  "homepage": "https://github.com/ruimarinho/bitcoin-core",
-  "bugs": "https://github.com/ruimarinho/bitcoin-core/issues",
+  "homepage": "https://github.com/sskender/torus-client",
+  "bugs": "https://github.com/sskender/torus-client/issues",
   "license": "MIT",
   "author": {
-    "name": "Rui Marinho",
-    "email": "ruipmarinho@gmail.com"
+    "name": "Sven Skender",
+    "email": "sskender@pm.me"
   },
   "main": "dist/src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ruimarinho/bitcoin-core.git"
+    "url": "https://github.com/sskender/torus-client.git"
   },
   "scripts": {
-    "changelog": "github_changelog_generator --project bitcoin-core --user ruimarinho --no-issues --header-label='# Changelog' --future-release=$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
-    "cover": "nyc --reporter=html --reporter=text npm test",
-    "dependencies": "docker-compose up -d bitcoind bitcoind-ssl bitcoind-username-only",
-    "lint": "eslint src test",
-    "prepublish": "npm run transpile",
-    "test": "NODE_ENV=test mocha $npm_package_options_mocha",
-    "testdocker": "docker-compose run --rm sut",
-    "transpile": "rm -rf dist/* && babel src --out-dir dist/src",
-    "version": "npm run changelog --future-release=$npm_package_version && npm run transpile && git add -A CHANGELOG.md dist"
+    "lint": "eslint src",
+    "transpile": "rm -rf dist/* && babel src --out-dir dist/src"
   },
   "dependencies": {
     "@uphold/request-logger": "^2.0.0",
     "debugnyan": "^1.0.0",
-    "json-bigint": "^0.2.0",
+    "json-bigint": "^1.0.0",
     "lodash": "^4.0.0",
     "request": "^2.53.0",
     "semver": "^5.1.0",
     "standard-error": "^1.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.0.0-beta.32",
-    "@babel/core": "7.0.0-beta.32",
-    "@babel/plugin-transform-async-to-generator": "7.0.0-beta.32",
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-transform-async-to-generator": "^7.14.5",
     "@babel/polyfill": "7.0.0-beta.32",
-    "@babel/preset-env": "7.0.0-beta.32",
-    "@babel/register": "7.0.0-beta.32",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/register": "^7.14.5",
     "babel-eslint": "^8.0.0",
-    "babel-plugin-istanbul": "^4.1.5",
+    "babel-plugin-istanbul": "^6.0.0",
     "eslint": "4.11.0",
     "eslint-config-uphold": "0.0.1",
-    "mocha": "^4.0.1",
+    "mocha": "^9.0.3",
     "nock": "^9.1.0",
-    "nyc": "^11.3.0",
+    "nyc": "^15.1.0",
     "pre-commit": "^1.1.2",
     "should": "^13.1.3"
   },
