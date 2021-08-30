@@ -29,7 +29,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * List of networks and their default port mapping.
  */
 const networks = {
-  mainnet: 8686
+  mainnet: 22411
 };
 /**
  * Promisify helper.

@@ -26,7 +26,7 @@ npm install --save https://github.com/sskender/torus-client
 4. `[logger=debugnyan('torus-client')]` _(Function)_: Custom logger (by default, `debugnyan`).
 5. `[network=mainnet]` _(string)_: The network.
 6. `[password]` _(string)_: The RPC server user password.
-7. `[port=8686]` _(string)_: The RPC server port.
+7. `[port=22411]` _(string)_: The RPC server port.
 8. `[ssl]` _(boolean|Object)_: Whether to use SSL/TLS with strict checking (_boolean_) or an expanded config (_Object_).
 9. `[ssl.enabled]` _(boolean)_: Whether to use SSL/TLS.
 10. `[ssl.strict]` _(boolean)_: Whether to do strict SSL/TLS checking (certificate must match host).
@@ -43,7 +43,7 @@ npm install --save https://github.com/sskender/torus-client
 const client = new Client({
   host: '127.0.0.1',
   password: 'somepassword',
-  port: 8686,
+  port: 22411,
   username: 'someusername'
  });
 ```

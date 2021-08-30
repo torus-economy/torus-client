@@ -16,7 +16,7 @@ import semver from 'semver';
  */
 
 const networks = {
-  mainnet: 8686
+  mainnet: 22411
 };
 
 /**
