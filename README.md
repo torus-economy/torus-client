@@ -6,7 +6,7 @@ Torus REST and RPC client
 Install the package via `yarn`:
 
 ```sh
-yarn add https://github.com/sskender/torus-client
+yarn add https://github.com/torus-economy/torus-client
 ```
 
 or via `npm`:
@@ -14,7 +14,7 @@ or via `npm`:
 Install the package via `npm`:
 
 ```sh
-npm install --save https://github.com/sskender/torus-client
+npm install --save https://github.com/torus-economy/torus-client
 ```
 
 ## Usage

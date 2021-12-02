@@ -14,8 +14,8 @@
     "torusd",
     "nodejs"
   ],
-  "homepage": "https://github.com/sskender/torus-client",
-  "bugs": "https://github.com/sskender/torus-client/issues",
+  "homepage": "https://github.com/torus-economy/torus-client",
+  "bugs": "https://github.com/torus-economy/torus-client/issues",
   "license": "MIT",
   "author": {
     "name": "Sven Skender",
@@ -24,7 +24,7 @@
   "main": "dist/src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sskender/torus-client.git"
+    "url": "https://github.com/torus-economy/torus-client.git"
   },
   "scripts": {
     "lint": "eslint src",
