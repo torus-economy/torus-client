@@ -40,6 +40,8 @@ npm install --save https://github.com/torus-economy/torus-client
 #### Basic client settings
 
 ```js
+const Client = require('torus-client')
+
 const client = new Client({
   host: '127.0.0.1',
   password: 'somepassword',
